@@ -20,11 +20,11 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
     const updateRadius = () => {
       if (typeof window !== "undefined") {
         if (window.innerWidth < 640) {
-          setRadius(160);
+          setRadius(120);
         } else if (window.innerWidth < 1024) {
-          setRadius(200);
+          setRadius(175);
         } else {
-          setRadius(240);
+          setRadius(230);
         }
       }
     };
@@ -89,7 +89,7 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex items-center pt-28 pb-20 md:pt-36 md:pb-28 border-b border-gray-200/80 dark:border-white/10 overflow-hidden select-none bg-transparent"
+      className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center pt-20 pb-12 sm:pt-28 sm:pb-20 md:pt-36 md:pb-28 border-b border-gray-200/80 dark:border-white/10 overflow-hidden select-none bg-transparent"
     >
       {/* Soft Ambient Volumetric Glowing Spotlights in Emerald/Mint (Desktop only to keep mobile lightweight) */}
       <div
@@ -116,50 +116,50 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* ──────────────── Left Column (Hero Content) ──────────────── */}
           <div className="lg:col-span-6 flex flex-col justify-center relative z-20">
-            {/* Work Readiness Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 shadow-sm mb-4 w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
-              <span className="font-mono text-[11px] text-[#15803D] dark:text-emerald-300 tracking-wider uppercase font-bold">
-                Tersedia untuk Magang Industri & Junior Web Dev
+            {/* Student Identity Pill */}
+            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 shadow-sm mb-3 sm:mb-4 w-fit">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
+              <span className="font-mono text-[10px] sm:text-[11px] text-[#15803D] dark:text-emerald-300 tracking-wider uppercase font-semibold">
+                Siswa SMKN 1 Bangsri · Kelas 12 PPLG
               </span>
             </div>
 
             {/* Friendly Greeting */}
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="font-sans text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light tracking-wide">
+            <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
+              <span className="font-sans text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 font-light tracking-wide">
                 Halo, saya{" "}
                 <span className="text-[#16A34A] dark:text-[#22C55E] font-semibold">Maulana Fahri Oktavian</span>
               </span>
-              <Sparkles className="w-5 h-5 text-[#22C55E] animate-pulse" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#22C55E] animate-pulse" />
             </div>
 
-            {/* Bold Recruiter-Friendly Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#111827] dark:text-white tracking-tight leading-[1.08] mb-5 font-sans">
-              Junior Full-Stack Web Developer{" "}
+            {/* Clean Professional Headline */}
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] dark:text-white tracking-tight leading-[1.12] mb-3 sm:mb-5 font-sans">
+              Web Developer{" "}
               <span className="bg-gradient-to-r from-[#111827] dark:from-white via-[#16A34A] dark:via-[#22C55E] to-[#22C55E] dark:to-[#4ADE80] bg-clip-text text-transparent">
                 & UI/UX Designer
               </span>
             </h1>
 
-            {/* Credible Subtext for DUDI */}
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg mb-8">
+            {/* Credible Subtext for SMK Student */}
+            <p className="text-xs sm:text-base md:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg mb-5 sm:mb-8">
               Siswa SMK Negeri 1 Bangsri jurusan PPLG. Berpengalaman merancang antarmuka UI/UX di Figma dan mengembangkan sistem web fungsional menggunakan Laravel, MySQL, dan Tailwind CSS.
             </p>
 
             {/* Action Buttons: CV Modal + WhatsApp + Email */}
-            <div className="flex flex-wrap items-center gap-3.5">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
               {/* Primary "Lihat CV / Resume" */}
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={onOpenResume}
-                className="group px-6 py-3.5 rounded-full bg-gradient-to-r from-[#16A34A] via-[#22C55E] to-[#16A34A] text-white font-sans text-sm font-semibold tracking-wide shadow-[0_8px_25px_rgba(22,163,74,0.35)] hover:shadow-[0_12px_32px_rgba(22,163,74,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                className="group px-4 py-2.5 sm:px-6 sm:py-3.5 rounded-full bg-gradient-to-r from-[#16A34A] via-[#22C55E] to-[#16A34A] text-white font-sans text-xs sm:text-sm font-semibold tracking-wide shadow-[0_6px_20px_rgba(22,163,74,0.3)] hover:shadow-[0_10px_28px_rgba(22,163,74,0.45)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
               >
-                <FileText className="w-4 h-4" />
+                <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Lihat CV / Resume</span>
               </motion.button>
 
@@ -168,33 +168,33 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => (onExploreClick ? onExploreClick() : handleScrollTo("work"))}
-                className="px-5 py-3.5 rounded-full bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] border border-gray-200 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500 text-[#111827] dark:text-white font-sans text-sm font-medium transition-all duration-200 flex items-center gap-2 shadow-sm cursor-pointer"
+                className="px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-full bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] border border-gray-200 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500 text-[#111827] dark:text-white font-sans text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 sm:gap-2 shadow-xs cursor-pointer"
               >
                 <span>Lihat Proyek</span>
-                <ArrowRight className="w-4 h-4 text-[#16A34A] dark:text-[#22C55E]" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#16A34A] dark:text-[#22C55E]" />
               </motion.button>
 
               {/* Tertiary WhatsApp Contact */}
               <motion.a
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                href={profileData.whatsapp}
+                href="https://wa.me/6282325433087?text=Halo%20Fahri,%20saya%20tertarik%20dengan%20portofolio%20Anda."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3.5 rounded-full bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] border border-gray-200 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500 text-[#111827] dark:text-white font-sans text-sm font-medium transition-all duration-200 flex items-center gap-2 shadow-sm cursor-pointer"
+                className="px-3.5 py-2.5 sm:px-5 sm:py-3.5 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] hover:border-emerald-300 dark:hover:border-emerald-500 font-sans text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-[#16A34A] dark:hover:text-[#22C55E] transition-all shadow-xs flex items-center gap-1.5 sm:gap-2 cursor-pointer"
               >
                 <span>WhatsApp</span>
               </motion.a>
 
-              {/* Tertiary Mail Icon Button */}
+              {/* Quick Email Icon */}
               <motion.a
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.94 }}
                 href="mailto:jeparafahri982@gmail.com"
                 aria-label="Email Fahri"
-                className="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] hover:border-emerald-300 dark:hover:border-emerald-500 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] transition-all shadow-sm cursor-pointer"
+                className="w-9 h-9 sm:w-12 sm:h-12 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:bg-emerald-50/60 dark:hover:bg-white/[0.1] hover:border-emerald-300 dark:hover:border-emerald-500 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] transition-all shadow-xs cursor-pointer"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.a>
             </div>
           </div>
@@ -259,10 +259,10 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                         }}
                       >
                         <div
-                          className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shadow-[0_8px_20px_rgba(22,163,74,0.12)] dark:shadow-[0_8px_20px_rgba(0,0,0,0.6)] bg-white/95 dark:bg-[#111827]/90 border border-emerald-100 dark:border-emerald-800/60 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,197,94,0.35)] hover:border-emerald-300"
+                          className="w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-lg sm:rounded-2xl flex items-center justify-center shadow-[0_4px_12px_rgba(22,163,74,0.12)] dark:shadow-[0_4px_14px_rgba(0,0,0,0.6)] bg-white/95 dark:bg-[#111827]/90 border border-emerald-100 dark:border-emerald-800/60 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,197,94,0.35)] hover:border-emerald-300"
                         >
                           <IconComp
-                            className="w-5 h-5 sm:w-7 sm:h-7 transition-transform group-hover:scale-110"
+                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 transition-transform group-hover:scale-110"
                             style={{ color: item.color }}
                           />
                         </div>
@@ -274,11 +274,11 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
             </div>
 
             {/* ── CENTRAL PORTRAIT OF FAHRI (In Front of Rotating Orbit) ── */}
-            <div className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[390px] flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-[190px] sm:max-w-[270px] md:max-w-[360px] flex flex-col items-center">
               
               {/* Soft Green Backlight Glow behind Fahri */}
               <div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-t from-[#22C55E]/30 via-[#16A34A]/15 to-transparent blur-3xl pointer-events-none"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 w-48 h-48 sm:w-80 sm:h-80 rounded-full bg-gradient-to-t from-[#22C55E]/25 via-[#16A34A]/10 to-transparent blur-2xl sm:blur-3xl pointer-events-none"
                 aria-hidden="true"
               />
 
@@ -293,22 +293,22 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                 <img
                   src={fahriPhoto}
                   alt="Maulana Fahri Oktavian"
-                  className="w-full h-auto object-contain select-none drop-shadow-[0_20px_35px_rgba(22,163,74,0.15)] dark:drop-shadow-[0_20px_35px_rgba(34,197,94,0.25)]"
+                  className="w-full h-auto object-contain select-none drop-shadow-[0_12px_24px_rgba(22,163,74,0.12)] dark:drop-shadow-[0_16px_28px_rgba(34,197,94,0.2)]"
                   priority="true"
                 />
               </div>
 
-              {/* Floating Verified Recruiter Status Pill */}
+              {/* Floating Verified Student Status Pill */}
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute -bottom-3 sm:bottom-0 px-4 py-2 rounded-full bg-white/90 dark:bg-[#111827]/90 border border-emerald-200/80 dark:border-emerald-800/80 shadow-[0_8px_25px_rgba(22,163,74,0.15)] dark:shadow-[0_8px_25px_rgba(0,0,0,0.6)] backdrop-blur-md flex items-center gap-2.5 z-20"
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="absolute -bottom-2 sm:bottom-0 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 dark:bg-[#111827]/90 border border-emerald-200/80 dark:border-emerald-800/80 shadow-[0_6px_20px_rgba(22,163,74,0.15)] dark:shadow-[0_6px_20px_rgba(0,0,0,0.6)] backdrop-blur-md flex items-center gap-2 z-20"
               >
-                <span className="w-2 h-2 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-200 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
+                <span className="font-mono text-[10px] sm:text-xs text-gray-700 dark:text-gray-200 font-medium">
                   Jepara, ID <span className="text-gray-300 dark:text-gray-600">·</span>{" "}
-                  <span className="text-[#16A34A] dark:text-[#22C55E] font-semibold">Web Developer</span>
+                  <span className="text-[#16A34A] dark:text-[#22C55E] font-semibold">PPLG SMK</span>
                 </span>
               </motion.div>
             </div>

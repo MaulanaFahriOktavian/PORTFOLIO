@@ -16,7 +16,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 sm:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
+      className="py-12 sm:py-20 md:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
     >
       {/* 3D Moving Illustrations */}
       <Floating3DStar
@@ -37,10 +37,10 @@ export default function AboutSection() {
           title="PROFIL & SPESIFIKASI"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: Authentic Personal Narrative from CV (7 cols) */}
           <motion.div
-            className="lg:col-span-7 space-y-5 text-base sm:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed"
+            className="lg:col-span-7 space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -55,7 +55,7 @@ export default function AboutSection() {
             </p>
 
             <p>
-              Memiliki semangat belajar tinggi, terbiasa berpikir logis, mampu bekerja sama dalam tim, serta siap berkontribusi aktif dalam proyek pengembangan perangkat lunak yang inovatif baik untuk kesempatan <strong className="text-[#16A34A] dark:text-[#22C55E] font-medium">Magang Industri (PKL)</strong> maupun posisi <strong className="text-[#16A34A] dark:text-[#22C55E] font-medium">Junior Web Developer</strong>.
+              Memiliki semangat belajar tinggi, terbiasa berpikir logis, mampu bekerja sama dalam tim, serta siap terus belajar, berkembang, dan berkontribusi aktif dalam pengembangan proyek web yang solutif.
             </p>
           </motion.div>
 

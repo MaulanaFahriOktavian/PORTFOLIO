@@ -276,7 +276,7 @@ export default function ResumeModal({ isOpen, onClose }) {
           {/* Bottom Footer in Modal */}
           <div className="px-6 py-4 border-t border-gray-200 dark:border-white/10 bg-emerald-50/50 dark:bg-[#0E1724] flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="text-xs text-gray-600 dark:text-gray-300 font-mono">
-              Status: <span className="text-[#16A34A] dark:text-[#22C55E] font-semibold">Tersedia untuk Magang / Kerja</span>
+              Status: <span className="text-[#16A34A] dark:text-[#22C55E] font-semibold">Siswa Aktif PPLG (Kelas 12)</span>
             </span>
             <div className="flex items-center gap-3">
               <a

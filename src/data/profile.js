@@ -1,7 +1,7 @@
 export const profileData = {
   fullName: "Maulana Fahri Oktavian",
   displayName: "Fahri",
-  role: "Junior Full-Stack Web Developer & UI/UX Designer",
+  role: "Web Developer & UI/UX Designer",
   status: "Siswa SMK Negeri 1 Bangsri · Kelas 12 PPLG",
   year: "2026",
   location: "Kembang, Jepara, Jawa Tengah",
@@ -11,14 +11,14 @@ export const profileData = {
   email: "jeparafahri982@gmail.com",
   phoneRaw: "082325433087",
   whatsappNumber: "+62 823-2543-3087",
-  whatsapp: "https://wa.me/6282325433087?text=Halo%20Fahri,%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20mendiskusikan%20peluang%20kerja%20/%20magang.",
+  whatsapp: "https://wa.me/6282325433087?text=Halo%20Fahri,%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20terhubung%20dan%20berdiskusi.",
   github: "https://github.com/MaulanaFahriOktavian",
   githubUser: "MaulanaFahriOktavian",
   linkedin: "https://www.linkedin.com/in/maulana-fahri-oktavian-21aa79429/",
   linkedinUser: "maulana-fahri-oktavian",
   instagram: "https://instagram.com/fhrimlnn__",
   instagramHandle: "@fhrimlnn__",
-  availability: "Tersedia untuk Magang Industri & Junior Web Developer",
+  availability: "Siswa SMK Negeri 1 Bangsri · Kelas 12 PPLG",
   workPreference: "On-site (Jepara, Semarang & Sekitarnya) / Remote",
   
   // Objektif Resmi dari CV

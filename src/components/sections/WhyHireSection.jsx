@@ -43,7 +43,7 @@ export default function WhyHireSection({ onOpenResume }) {
   return (
     <section
       id="why-hire"
-      className="py-20 sm:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
+      className="py-12 sm:py-20 md:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
     >
       {/* 3D Visual Accents */}
       <Floating3DCube
@@ -62,21 +62,21 @@ export default function WhyHireSection({ onOpenResume }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           index="02"
-          title="NILAI TAMBAH UNTUK DUDI"
+          title="KOMITMEN & NILAI TAMBAH"
         />
 
         {/* Introduction Pitch */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-4">
-            Mengapa Maulana Fahri adalah aset yang tepat untuk tim industri Anda?
+        <div className="max-w-3xl mb-8 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-3">
+            Mengapa Maulana Fahri siap berkontribusi dalam tim Anda?
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed">
-            Sebagai talenta muda dari SMK Negeri 1 Bangsri, saya tidak hanya membawa pemahaman teoritis, melainkan kesiapan eksekusi proyek nyata dengan etos kerja profesional.
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+            Sebagai siswa jurusan PPLG dari SMK Negeri 1 Bangsri, saya tidak hanya membawa pemahaman dasar, melainkan antusiasme belajar tinggi dan kesiapan praktik langsung dengan etos kerja yang disiplin.
           </p>
         </div>
 
         {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-12">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -86,7 +86,7 @@ export default function WhyHireSection({ onOpenResume }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_12px_32px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)] hover:-translate-y-1 transition-all duration-300 shadow-sm flex flex-col justify-between"
+                className="group p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_12px_32px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)] hover:-translate-y-1 transition-all duration-300 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Icon & Badge */}

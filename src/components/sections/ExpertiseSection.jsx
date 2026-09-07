@@ -36,7 +36,7 @@ export default function ExpertiseSection() {
   return (
     <section
       id="expertise"
-      className="py-20 sm:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
+      className="py-14 sm:py-20 md:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
     >
       {/* 3D Animated Moving Illustrations */}
       <Floating3DSphere
@@ -58,62 +58,62 @@ export default function ExpertiseSection() {
         />
 
         {/* Intro text */}
-        <div className="max-w-2xl mb-12">
-          <p className="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
-            Teknologi, bahasa pemrograman, dan perangkat industri otentik yang aktif saya gunakan dalam perancangan serta pengembangan sistem web.
+        <div className="max-w-2xl mb-8 sm:mb-12">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+            Teknologi, bahasa pemrograman, dan tools pengembangan web yang aktif saya pelajari dan gunakan dalam pembuatan proyek web.
           </p>
         </div>
 
-        {/* Direct Logos with Drop Shadows (No columns / No box cards) */}
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-14 max-w-4xl mx-auto py-6">
+        {/* Direct Logos with Drop Shadows - Responsive 4 cols on mobile, 6 cols on desktop */}
+        <div className="grid grid-cols-4 md:grid-cols-6 gap-y-6 sm:gap-y-10 gap-x-2 sm:gap-x-8 max-w-4xl mx-auto py-2 sm:py-6 place-items-center">
           {technologies.map((tech, idx) => {
             const Icon = tech.icon;
             return (
               <motion.div
                 key={tech.name}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.04 }}
-                whileHover={{ y: -8, scale: 1.1 }}
-                className="flex flex-col items-center group cursor-pointer"
+                transition={{ duration: 0.35, delay: idx * 0.03 }}
+                whileHover={{ y: -6, scale: 1.08 }}
+                className="flex flex-col items-center group cursor-pointer w-full max-w-[90px]"
               >
                 {/* Logo Container with Physical Drop Shadow & Ambient Glow */}
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                <div className="relative w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
                   {/* Subtle ambient volumetric color glow beneath the logo */}
                   <div
-                    className="absolute inset-1 rounded-full blur-md sm:blur-xl opacity-30 group-hover:opacity-75 transition-opacity duration-300 scale-90"
+                    className="absolute inset-1 rounded-full blur-sm sm:blur-md md:blur-lg opacity-30 group-hover:opacity-75 transition-opacity duration-300 scale-90"
                     style={{ background: tech.color }}
                   />
 
                   {/* Direct Logo Icon with Layered Drop Shadows */}
                   {tech.name === "JavaScript" ? (
                     <div
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#F7DF1E] text-black font-extrabold flex items-end justify-end p-1.5 text-base sm:text-lg tracking-tighter leading-none relative z-10 transition-transform duration-300 group-hover:scale-105"
+                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-md sm:rounded-lg md:rounded-xl bg-[#F7DF1E] text-black font-extrabold flex items-end justify-end p-1 text-xs sm:text-sm md:text-base tracking-tighter leading-none relative z-10 transition-transform duration-300 group-hover:scale-105"
                       style={{
                         boxShadow:
-                          "0 12px 20px -3px rgba(247, 223, 30, 0.55), 0 4px 8px rgba(0,0,0,0.12)",
+                          "0 8px 16px -2px rgba(247, 223, 30, 0.45), 0 3px 6px rgba(0,0,0,0.12)",
                       }}
                     >
                       JS
                     </div>
                   ) : tech.name === "Canva" ? (
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full relative z-10 transition-transform duration-300 group-hover:scale-105 shadow-md">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full relative z-10 transition-transform duration-300 group-hover:scale-105 shadow-sm sm:shadow-md">
                       <Icon className="w-full h-full" />
                     </div>
                   ) : (
                     <Icon
-                      className="text-5xl sm:text-6xl relative z-10 transition-transform duration-300 group-hover:scale-105"
+                      className="text-3xl sm:text-4xl md:text-5xl relative z-10 transition-transform duration-300 group-hover:scale-105"
                       style={{
                         color: tech.color,
-                        filter: `drop-shadow(0 12px 18px ${tech.color}45) drop-shadow(0 4px 6px rgba(0,0,0,0.12))`,
+                        filter: `drop-shadow(0 8px 14px ${tech.color}40) drop-shadow(0 3px 5px rgba(0,0,0,0.12))`,
                       }}
                     />
                   )}
                 </div>
 
                 {/* Tech Name Label */}
-                <span className="font-sans font-medium text-xs sm:text-sm text-gray-700 dark:text-gray-200 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors mt-3 text-center tracking-tight">
+                <span className="font-sans font-medium text-[11px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-200 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors mt-1.5 sm:mt-2 text-center tracking-tight truncate w-full">
                   {tech.name}
                 </span>
               </motion.div>

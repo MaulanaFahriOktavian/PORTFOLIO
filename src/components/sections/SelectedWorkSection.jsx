@@ -24,7 +24,7 @@ export default function SelectedWorkSection({ onSelectProject }) {
   return (
     <section
       id="work"
-      className="py-20 sm:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
+      className="py-12 sm:py-20 md:py-28 border-b border-gray-200/80 dark:border-white/10 relative overflow-hidden bg-transparent"
     >
       {/* 3D Animated Moving Illustrations in Background */}
       <Floating3DCube
