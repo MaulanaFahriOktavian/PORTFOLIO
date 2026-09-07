@@ -13,36 +13,14 @@ import ResumeModal from "./components/ui/ResumeModal";
 import CustomCursor from "./components/ui/CustomCursor";
 import { projects } from "./data/projects";
 
+// Force dark mode permanently on page load
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("theme", "dark");
+}
+
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-
-  // Theme Mode: "light" | "dark" with localStorage and system preference
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("theme");
-      if (saved === "light" || saved === "dark") return saved;
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
-      }
-    }
-    return "light";
-  });
-
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      const root = document.documentElement;
-      if (theme === "dark") {
-        root.classList.add("dark");
-      } else {
-        root.classList.remove("dark");
-      }
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
-
-  const handleToggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
 
   // Initialize route from current browser URL pathname: /projects/[slug]
   const [currentSlug, setCurrentSlug] = useState(() => {
@@ -119,13 +97,11 @@ export default function App() {
       {/* Precision Desktop Custom Cursor */}
       <CustomCursor />
 
-      {/* Minimal Editorial Navigation with CV Trigger & Theme Toggle */}
+      {/* Minimal Editorial Navigation with CV Trigger */}
       <Navbar
         isDetailPage={Boolean(currentProject)}
         onNavigateHome={handleNavigateHome}
         onOpenResume={() => setIsResumeOpen(true)}
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
       />
 
       {/* Main Content Area */}

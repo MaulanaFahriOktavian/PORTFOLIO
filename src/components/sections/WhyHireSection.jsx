@@ -121,38 +121,6 @@ export default function WhyHireSection({ onOpenResume }) {
             );
           })}
         </div>
-
-        {/* Work Readiness Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#ECFDF5] via-[#F0FDF4] to-[#ECFDF5] dark:from-[#0B1E14] dark:via-[#10271A] dark:to-[#0B1E14] border border-emerald-300 dark:border-emerald-700/60 shadow-[0_10px_35px_rgba(22,163,74,0.12)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.4)] flex flex-col sm:flex-row items-center justify-between gap-6"
-        >
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
-              <span className="font-mono text-xs text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-semibold">
-                STATUS KESIAPAN KERJA
-              </span>
-            </div>
-            <h4 className="text-lg sm:text-xl font-bold text-[#111827] dark:text-white mb-1">
-              Siap Magang Industri (PKL) / Junior Full-Stack Web Developer
-            </h4>
-            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-light">
-              Penempatan On-site (Jepara, Semarang, DIY/Jateng) maupun Remote. Fleksibel dan siap beradaptasi.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-            <button
-              onClick={onOpenResume}
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-[#16A34A] to-[#22C55E] text-white font-sans text-xs font-semibold tracking-wide shadow-md hover:shadow-lg hover:scale-105 transition-all text-center cursor-pointer"
-            >
-              Lihat Resume / CV Lengkap
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

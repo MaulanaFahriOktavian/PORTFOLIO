@@ -9,8 +9,8 @@ import {
   SiMysql,
   SiFigma,
   SiGithub,
-  SiHtml5,
-  SiCss,
+  SiMongodb,
+  SiPostman,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import CanvaIcon from "../ui/CanvaIcon";
@@ -21,11 +21,11 @@ const technologies = [
   { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
   { name: "PHP", icon: SiPhp, color: "#777BB4" },
   { name: "MySQL", icon: SiMysql, color: "#00758F" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", icon: SiCss, color: "#1572B6" },
   { name: "React", icon: SiReact, color: "#087EA4" },
+  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
   { name: "Canva", icon: CanvaIcon, color: "#00C4CC" },
   { name: "VS Code", icon: VscVscode, color: "#007ACC" },

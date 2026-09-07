@@ -6,14 +6,11 @@ import { profileData } from "../../data/profile";
 
 export default function AboutSection() {
   const specs = [
-    { label: "LOKASI", value: profileData.location },
-    { label: "ALAMAT", value: profileData.address },
-    { label: "SEKOLAH", value: `${profileData.school} (PPLG)` },
+    { label: "SEKOLAH", value: `${profileData.school}` },
+    { label: "JURUSAN", value: profileData.major },
     { label: "STATUS", value: "Kelas 12 · Angkatan 2026" },
-    { label: "FOKUS KEAHLIAN", value: "Web Dev (Front & Back-End Dasar), UI/UX" },
-    { label: "PRESTASI", value: "Juara Umum Kejurcab LOBB (2026)" },
-    { label: "KESIAPAN KERJA", value: profileData.availability },
-    { label: "PREFERENSI KERJA", value: profileData.workPreference },
+    { label: "FOKUS KEAHLIAN", value: "Web Development, UI/UX Design, Basis Data" },
+    { label: "ALAMAT", value: profileData.address },
   ];
 
   return (

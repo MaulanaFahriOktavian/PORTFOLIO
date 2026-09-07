@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -14,8 +14,6 @@ export default function Navbar({
   isDetailPage = false,
   onNavigateHome,
   onOpenResume,
-  theme = "light",
-  onToggleTheme,
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -102,28 +100,12 @@ export default function Navbar({
             })}
           </nav>
 
-          {/* Right: Dark/Light Mode Toggle + Mobile Hamburger */}
+          {/* Right: Mobile Hamburger */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {onToggleTheme && (
-              <button
-                id="theme-toggle-btn"
-                onClick={onToggleTheme}
-                aria-label={theme === "dark" ? "Ganti ke mode terang" : "Ganti ke mode gelap"}
-                title={theme === "dark" ? "Mode Terang" : "Mode Gelap"}
-                className="w-9 h-9 rounded-full bg-[rgba(22,163,74,0.08)] dark:bg-[rgba(34,197,94,0.1)] hover:bg-[rgba(22,163,74,0.15)] dark:hover:bg-[rgba(34,197,94,0.18)] text-gray-700 dark:text-gray-200 flex items-center justify-center transition-all duration-200 cursor-pointer border border-[rgba(22,163,74,0.2)] dark:border-[rgba(34,197,94,0.2)]"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-4 h-4 text-[#FACC15] transition-transform duration-300 rotate-0 hover:rotate-45" />
-                ) : (
-                  <Moon className="w-4 h-4 text-[#16A34A] transition-transform duration-300 rotate-0 hover:-rotate-12" />
-                )}
-              </button>
-            )}
-
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-9 h-9 rounded-full bg-[rgba(22,163,74,0.08)] dark:bg-[rgba(34,197,94,0.1)] hover:bg-[rgba(22,163,74,0.15)] dark:hover:bg-[rgba(34,197,94,0.18)] text-[#16A34A] dark:text-[#22C55E] flex items-center justify-center transition-colors border border-[rgba(22,163,74,0.2)] dark:border-[rgba(34,197,94,0.2)] cursor-pointer"
+              className="md:hidden w-9 h-9 rounded-full bg-[rgba(22,163,74,0.1)] dark:bg-[rgba(34,197,94,0.1)] hover:bg-[rgba(22,163,74,0.18)] dark:hover:bg-[rgba(34,197,94,0.18)] text-[#16A34A] dark:text-[#22C55E] flex items-center justify-center transition-colors border border-[rgba(22,163,74,0.2)] dark:border-[rgba(34,197,94,0.2)] cursor-pointer"
               aria-label={mobileMenuOpen ? "Tutup menu" : "Buka menu"}
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}

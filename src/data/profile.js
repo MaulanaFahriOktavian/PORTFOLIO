@@ -75,6 +75,8 @@ export const profileData = {
       "Git/GitHub",
       "Laravel",
       "MySQL",
+      "MongoDB",
+      "Postman",
       "Figma",
       "Canva",
       "Laragon"
