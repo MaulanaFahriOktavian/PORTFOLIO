@@ -10,7 +10,6 @@ import AboutSection from "./components/sections/AboutSection";
 import ContactSection from "./components/sections/ContactSection";
 import ProjectDetailPage from "./components/projects/ProjectDetailPage";
 import ResumeModal from "./components/ui/ResumeModal";
-import CustomCursor from "./components/ui/CustomCursor";
 import { projects } from "./data/projects";
 
 // Force dark mode permanently on page load
@@ -94,9 +93,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-transparent text-[#111827] dark:text-[#F8FAFC] flex flex-col selection:bg-[#16A34A] selection:text-white font-sans antialiased transition-colors duration-300">
-      {/* Precision Desktop Custom Cursor */}
-      <CustomCursor />
-
       {/* Minimal Editorial Navigation with CV Trigger */}
       <Navbar
         isDetailPage={Boolean(currentProject)}

@@ -82,7 +82,7 @@ export default function ExpertiseSection() {
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                   {/* Subtle ambient volumetric color glow beneath the logo */}
                   <div
-                    className="absolute inset-1 rounded-full blur-xl opacity-30 group-hover:opacity-75 transition-opacity duration-300 scale-90"
+                    className="absolute inset-1 rounded-full blur-md sm:blur-xl opacity-30 group-hover:opacity-75 transition-opacity duration-300 scale-90"
                     style={{ background: tech.color }}
                   />
 

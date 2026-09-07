@@ -91,13 +91,13 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
       id="hero"
       className="relative min-h-[92vh] flex items-center pt-28 pb-20 md:pt-36 md:pb-28 border-b border-gray-200/80 dark:border-white/10 overflow-hidden select-none bg-transparent"
     >
-      {/* Soft Ambient Volumetric Glowing Spotlights in Emerald/Mint */}
+      {/* Soft Ambient Volumetric Glowing Spotlights in Emerald/Mint (Desktop only to keep mobile lightweight) */}
       <div
-        className="absolute top-1/3 right-6 sm:right-24 -translate-y-1/2 w-[380px] sm:w-[650px] h-[380px] sm:h-[650px] rounded-full bg-gradient-to-tr from-[#22C55E]/20 via-[#16A34A]/10 to-transparent blur-[110px] sm:blur-[140px] pointer-events-none"
+        className="hidden sm:block absolute top-1/3 right-6 sm:right-24 -translate-y-1/2 w-[380px] sm:w-[650px] h-[380px] sm:h-[650px] rounded-full bg-gradient-to-tr from-[#22C55E]/20 via-[#16A34A]/10 to-transparent blur-[110px] sm:blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute top-1/4 left-1/4 w-[240px] sm:w-[320px] h-[240px] sm:h-[320px] rounded-full bg-[#16A34A]/10 blur-[100px] pointer-events-none"
+        className="hidden sm:block absolute top-1/4 left-1/4 w-[240px] sm:w-[320px] h-[240px] sm:h-[320px] rounded-full bg-[#16A34A]/10 blur-[100px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -122,7 +122,7 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
           <div className="lg:col-span-6 flex flex-col justify-center relative z-20">
             {/* Work Readiness Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 shadow-sm mb-4 w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
               <span className="font-mono text-[11px] text-[#15803D] dark:text-emerald-300 tracking-wider uppercase font-bold">
                 Tersedia untuk Magang Industri & Junior Web Dev
               </span>
@@ -227,9 +227,9 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                 }}
               />
 
-              {/* ROTATING ORBIT (360 Degree Continuous Animation) */}
+              {/* ROTATING ORBIT (Continuous Animation on Desktop, static on mobile for peak performance) */}
               <div
-                className="rounded-full relative animate-spin pointer-events-auto"
+                className="rounded-full relative md:animate-spin pointer-events-auto"
                 style={{
                   width: `${radius * 2}px`,
                   height: `${radius * 2}px`,
@@ -252,7 +252,7 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                     >
                       {/* Counter-rotating badge so icon stays upright! */}
                       <div
-                        className="animate-spin group cursor-pointer transition-transform hover:scale-125"
+                        className="md:animate-spin group cursor-pointer transition-transform hover:scale-125"
                         style={{
                           animationDuration: "28s",
                           animationDirection: "reverse",

@@ -34,7 +34,7 @@ export function FloatingLightning({
         },
         opacity: { duration: 0.8 },
       }}
-      className={`pointer-events-none absolute z-20 ${className}`}
+      className={`pointer-events-none absolute z-20 hidden md:block ${className}`}
     >
       <svg
         width="110"
@@ -103,7 +103,7 @@ export function Floating3DCube({
         rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay },
         opacity: { duration: 0.8 },
       }}
-      className={`pointer-events-none absolute z-10 ${className}`}
+      className={`pointer-events-none absolute z-10 hidden md:block ${className}`}
     >
       <svg
         width={size}
@@ -164,7 +164,7 @@ export function Floating3DSphere({
         x: { duration: 4.8, repeat: Infinity, ease: "easeInOut", delay },
         opacity: { duration: 0.8 },
       }}
-      className={`pointer-events-none absolute z-10 ${className}`}
+      className={`pointer-events-none absolute z-10 hidden md:block ${className}`}
     >
       <div
         style={{
@@ -206,7 +206,7 @@ export function Floating3DStar({
         y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay },
         opacity: { duration: 0.8 },
       }}
-      className={`pointer-events-none absolute z-10 ${className}`}
+      className={`pointer-events-none absolute z-10 hidden md:block ${className}`}
     >
       <svg
         width={size}

@@ -71,7 +71,7 @@
       linear-gradient(rgba(22, 163, 74, 0.035) 1px, transparent 1px),
       linear-gradient(90deg, rgba(22, 163, 74, 0.035) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 
   html.dark body {
@@ -84,7 +84,15 @@
       linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
-    background-attachment: fixed;
+    background-attachment: scroll;
+  }
+
+  /* Only desktop uses fixed background attachment to prevent mobile scrolling repaint lag */
+  @media (min-width: 1024px) {
+    html:not(.dark) body,
+    html.dark body {
+      background-attachment: fixed;
+    }
   }
 
   /* Accessibility focus ring */
@@ -163,4 +171,36 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 
 .glow-premium {
   box-shadow: 0 0 35px -5px rgba(255, 107, 0, 0.35);
+}
+
+/* ── Mobile Performance & Ultra-Smooth 60FPS Scrolling ── */
+@media (max-width: 768px) {
+  /* Prevent continuous spinning loops on mobile to save CPU and battery */
+  .animate-spin {
+    animation: none !important;
+  }
+
+  /* Disable ping on mobile to prevent layout thrashing */
+  .animate-ping {
+    animation: none !important;
+  }
+
+  /* Slow down pulse to make it feather-light */
+  .animate-pulse {
+    animation-duration: 3s !important;
+  }
+
+  /* Lighten backdrop blur filters for smooth rendering on mobile GPUs */
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  /* Remove tap delays and unnecessary transitions on touch */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
