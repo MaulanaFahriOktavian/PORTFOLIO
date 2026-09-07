@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, FileText, Code2, Palette, FolderGit2, GraduationCap } from "lucide-react";
+import { Mail, ArrowRight, FileText } from "lucide-react";
 import {
   SiReact,
   SiTailwindcss,
@@ -10,11 +10,21 @@ import {
   SiMysql,
 } from "react-icons/si";
 import fahriPhoto from "../../assets/images/fahri.png";
+import heroCardElement from "../../assets/images/hero-card-element.png";
 import { FloatingLightning } from "../ui/Floating3DAssets";
 import { profileData } from "../../data/profile";
 
 export default function HeroSection({ onExploreClick, onOpenResume }) {
   const [radius, setRadius] = useState(230);
+
+  const mobileTechBadges = [
+    { name: "React", icon: SiReact, color: "#61DAFB", pos: "top-4 left-3", floatDuration: 3.2, delay: 0 },
+    { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8", pos: "top-[47%] -translate-y-1/2 left-2", floatDuration: 2.8, delay: 0.1 },
+    { name: "Laravel", icon: SiLaravel, color: "#FF2D20", pos: "bottom-12 left-3", floatDuration: 3.4, delay: 0.2 },
+    { name: "Figma", icon: SiFigma, color: "#F24E1E", pos: "top-4 right-3", floatDuration: 3.0, delay: 0.15 },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", pos: "top-[47%] -translate-y-1/2 right-2", floatDuration: 3.5, delay: 0.25 },
+    { name: "MySQL", icon: SiMysql, color: "#00758F", pos: "bottom-12 right-3", floatDuration: 2.9, delay: 0.3 },
+  ];
 
   useEffect(() => {
     const updateRadius = () => {
@@ -77,7 +87,7 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
         {/* ─────────── MOBILE LAYOUT (< lg) ─────────── */}
         <div className="lg:hidden flex flex-col gap-5">
 
-          {/* 1. Text & Introduction (Mobile First Flow) */}
+          {/* 1. Header & Text Introduction */}
           <motion.div
             className="flex flex-col"
             initial={{ opacity: 0, y: 16 }}
@@ -98,83 +108,63 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
               </span>
             </h1>
 
-            <p className="text-sm text-gray-600 dark:text-gray-300/90 font-light leading-relaxed mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-300/90 font-light leading-relaxed mb-3">
               Halo, saya <span className="text-gray-900 dark:text-white font-medium">Maulana Fahri Oktavian</span>. Berfokus pada perancangan UI/UX antarmuka modern di Figma dan pengembangan sistem web dengan ekosistem Laravel, MySQL, dan Tailwind CSS.
             </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-2">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={onOpenResume}
-                className="px-4 py-2.5 rounded-full bg-gradient-to-r from-[#16A34A] via-[#22C55E] to-[#16A34A] text-white font-sans text-xs font-semibold shadow-[0_4px_16px_rgba(22,163,74,0.3)] flex items-center gap-2 cursor-pointer"
-              >
-                <FileText className="w-3.5 h-3.5" />
-                <span>Lihat CV / Resume</span>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => (onExploreClick ? onExploreClick() : handleScrollTo("work"))}
-                className="px-4 py-2.5 rounded-full bg-white dark:bg-white/[0.06] border border-gray-200 dark:border-white/10 hover:border-emerald-500 text-gray-800 dark:text-white font-sans text-xs font-medium flex items-center gap-1.5 cursor-pointer transition-all shadow-xs"
-              >
-                <span>Lihat Proyek</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E]" />
-              </motion.button>
-
-              <motion.a
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                href={profileData.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3.5 py-2.5 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:border-emerald-500 font-sans text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] flex items-center cursor-pointer transition-all shadow-xs"
-              >
-                WhatsApp
-              </motion.a>
-
-              <motion.a
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.94 }}
-                href="mailto:jeparafahri982@gmail.com"
-                aria-label="Email Fahri"
-                className="w-9 h-9 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:border-emerald-500 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] cursor-pointer transition-all shadow-xs"
-              >
-                <Mail className="w-4 h-4" />
-              </motion.a>
-            </div>
           </motion.div>
 
-          {/* 2. Professional Photo Showcase Container */}
           <motion.div
-            className="relative w-full flex justify-center mt-2"
+            className="relative w-full flex justify-center py-1"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.6, delay: 0.12 }}
           >
-            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border border-gray-200/80 dark:border-white/10 bg-gradient-to-b from-gray-50/60 dark:from-white/[0.04] via-emerald-50/30 dark:via-emerald-950/20 to-transparent p-4 pb-0 shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
-              {/* Subtle radial emerald aura behind avatar */}
-              <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-[#22C55E]/12 dark:bg-[#22C55E]/15 blur-3xl pointer-events-none"
-                aria-hidden="true"
-              />
-
-              {/* Minimal floating context chips */}
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0d141c]/80 border border-gray-200/80 dark:border-white/10 shadow-xs backdrop-blur-md">
-                <Code2 className="w-3 h-3 text-[#16A34A] dark:text-[#22C55E]" />
-                <span className="text-[10px] font-sans font-medium text-gray-800 dark:text-gray-200">Web Dev</span>
+            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border border-emerald-500/25 dark:border-emerald-500/30 bg-[#06190e] p-4 pb-0 shadow-[0_14px_36px_rgba(0,0,0,0.18)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
+              {/* Reference background graphic element */}
+              <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+                <img
+                  src={heroCardElement}
+                  alt=""
+                  className="w-full h-full object-cover object-[center_15%] scale-100 opacity-95"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04140a]/80 via-transparent to-[#04140a]/20" />
               </div>
 
-              <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0d141c]/80 border border-gray-200/80 dark:border-white/10 shadow-xs backdrop-blur-md">
-                <Palette className="w-3 h-3 text-[#16A34A] dark:text-[#22C55E]" />
-                <span className="text-[10px] font-sans font-medium text-gray-800 dark:text-gray-200">UI/UX</span>
-              </div>
+              {/* Floating tech stack logos placed around portrait */}
+              {mobileTechBadges.map((badge) => {
+                const Icon = badge.icon;
+                return (
+                  <motion.div
+                    key={badge.name}
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      y: [-3, 3, -3],
+                    }}
+                    transition={{
+                      opacity: { duration: 0.4, delay: 0.15 + badge.delay },
+                      scale: { duration: 0.4, delay: 0.15 + badge.delay },
+                      y: {
+                        repeat: Infinity,
+                        duration: badge.floatDuration,
+                        ease: "easeInOut",
+                      },
+                    }}
+                    className={`absolute ${badge.pos} z-20 flex items-center justify-center w-10 h-10 rounded-2xl bg-black/55 dark:bg-black/70 border border-white/20 dark:border-emerald-500/35 shadow-[0_4px_16px_rgba(0,0,0,0.45)] backdrop-blur-md cursor-pointer group`}
+                    title={badge.name}
+                  >
+                    <Icon
+                      className="w-5 h-5 transition-transform duration-200 group-hover:scale-115 group-active:scale-95"
+                      style={{ color: badge.color }}
+                    />
+                  </motion.div>
+                );
+              })}
 
               {/* Portrait photo */}
               <div
-                className="w-full flex justify-center relative z-10"
+                className="w-full flex justify-center relative z-10 pt-2"
                 style={{
                   maskImage: "linear-gradient(to bottom, black 76%, transparent 100%)",
                   WebkitMaskImage: "linear-gradient(to bottom, black 76%, transparent 100%)",
@@ -183,42 +173,65 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
                 <img
                   src={fahriPhoto}
                   alt="Maulana Fahri Oktavian"
-                  className="w-full max-w-[210px] h-auto object-contain select-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+                  className="w-full max-w-[210px] h-auto object-contain select-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.5)]"
                 />
               </div>
 
               {/* Bottom location badge */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white/95 dark:bg-[#0d141c]/90 border border-emerald-200 dark:border-emerald-500/30 shadow-md backdrop-blur-md flex items-center gap-1.5 z-20 whitespace-nowrap">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A] dark:bg-[#22C55E] animate-pulse" />
-                <span className="font-mono text-[10px] text-gray-700 dark:text-gray-200">Jepara, ID · SMKN 1 Bangsri</span>
+              <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/65 dark:bg-black/75 border border-emerald-500/40 shadow-lg backdrop-blur-md flex items-center gap-1.5 z-20 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+                <span className="font-mono text-[10px] text-emerald-100 font-medium">Jepara, ID · SMKN 1 Bangsri</span>
               </div>
             </div>
           </motion.div>
 
-          {/* 3. Professional Clean Metrics (Lucide icons, NO emojis) */}
+          {/* 3. Action Buttons (Placed directly below the photo) */}
           <motion.div
-            className="grid grid-cols-3 gap-2"
+            className="flex flex-wrap items-center gap-2 sm:gap-2.5"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.22 }}
+            transition={{ duration: 0.5, delay: 0.18 }}
           >
-            <div className="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/10 text-center shadow-xs">
-              <FolderGit2 className="w-4 h-4 text-[#16A34A] dark:text-[#22C55E]" />
-              <span className="text-sm font-bold text-gray-900 dark:text-white font-sans leading-none mt-0.5">5+ Proyek</span>
-              <span className="text-[9px] font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider">Web & Desain</span>
-            </div>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={onOpenResume}
+              className="px-4 py-2.5 rounded-full bg-gradient-to-r from-[#16A34A] via-[#22C55E] to-[#16A34A] text-white font-sans text-xs font-semibold shadow-[0_4px_16px_rgba(22,163,74,0.3)] flex items-center gap-2 cursor-pointer"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Lihat CV / Resume</span>
+            </motion.button>
 
-            <div className="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/10 text-center shadow-xs">
-              <Code2 className="w-4 h-4 text-[#16A34A] dark:text-[#22C55E]" />
-              <span className="text-sm font-bold text-gray-900 dark:text-white font-sans leading-none mt-0.5">Laravel</span>
-              <span className="text-[9px] font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider">& Tailwind</span>
-            </div>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => (onExploreClick ? onExploreClick() : handleScrollTo("work"))}
+              className="px-4 py-2.5 rounded-full bg-white dark:bg-white/[0.06] border border-gray-200 dark:border-white/10 hover:border-emerald-500 text-gray-800 dark:text-white font-sans text-xs font-medium flex items-center gap-1.5 cursor-pointer transition-all shadow-xs"
+            >
+              <span>Lihat Proyek</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E]" />
+            </motion.button>
 
-            <div className="flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/10 text-center shadow-xs">
-              <GraduationCap className="w-4 h-4 text-[#16A34A] dark:text-[#22C55E]" />
-              <span className="text-sm font-bold text-gray-900 dark:text-white font-sans leading-none mt-0.5">Kelas 12</span>
-              <span className="text-[9px] font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider">PPLG SMK</span>
-            </div>
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              href={profileData.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2.5 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:border-emerald-500 font-sans text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] flex items-center cursor-pointer transition-all shadow-xs"
+            >
+              WhatsApp
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.94 }}
+              href="mailto:jeparafahri982@gmail.com"
+              aria-label="Email Fahri"
+              className="w-9 h-9 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.06] hover:border-emerald-500 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] cursor-pointer transition-all shadow-xs"
+            >
+              <Mail className="w-4 h-4" />
+            </motion.a>
           </motion.div>
         </div>
 
