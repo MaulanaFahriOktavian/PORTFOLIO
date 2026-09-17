@@ -127,8 +127,7 @@ export default function ExperienceSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="04"
-          title="PENGALAMAN & REKAM JEJAK"
+          title="Pengalaman & Rekam Jejak"
         />
 
         <div className="max-w-3xl mb-8 sm:mb-14">

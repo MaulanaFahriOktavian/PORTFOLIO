@@ -61,8 +61,7 @@ export default function WhyHireSection({ onOpenResume }) {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="02"
-          title="KOMITMEN & NILAI TAMBAH"
+          title="Komitmen & Nilai Tambah"
         />
 
         {/* Introduction Pitch */}

@@ -57,9 +57,8 @@ export default function ProcessSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="06"
-          title="HOW I BUILD"
-          subcopy="Lima tahapan sistematis dari problem hingga produksi antarmuka."
+          title="Alur Kerja & Metodologi"
+          subcopy="Tahapan Sistematis dari Konsep Desain hingga Produksi Web"
         />
 
         {/* Desktop: Horizontal Progression | Mobile: Vertical Progression */}

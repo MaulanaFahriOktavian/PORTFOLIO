@@ -2,36 +2,34 @@ import React from 'react';
 
 /**
  * SectionHeader
- * Editorial section header with index, title, subcopy, and thin structural divider line.
+ * Modern landing page section badge & header without artificial numbering.
  */
 export default function SectionHeader({
-  index = '01',
   title,
   subcopy,
   action,
   className = '',
 }) {
   return (
-    <div className={`mb-8 sm:mb-12 md:mb-16 ${className}`}>
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-gray-200/80 dark:border-white/10">
+    <div className={`mb-6 sm:mb-10 ${className}`}>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className={`flex items-center gap-2.5 sm:gap-3 ${subcopy ? "mb-2 sm:mb-3" : "mb-0"}`}>
-            <span className="font-mono text-[11px] sm:text-xs font-bold tracking-widest text-[#16A34A] dark:text-[#22C55E] uppercase">
-              {index}
-            </span>
-            <span className="w-5 sm:w-6 h-[1.5px] bg-[#22C55E]" />
-            <span className="font-mono text-[11px] sm:text-xs tracking-widest text-gray-500 dark:text-gray-400 uppercase font-semibold">
-              {title}
-            </span>
-          </div>
+          {title && (
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 shadow-xs mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-mono text-[10.5px] sm:text-[11.5px] font-bold tracking-widest text-emerald-700 dark:text-emerald-400 uppercase">
+                {title}
+              </span>
+            </div>
+          )}
           {subcopy && (
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-[#111827] dark:text-white tracking-tight max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 dark:text-white tracking-tight leading-snug max-w-2xl">
               {subcopy}
             </h2>
           )}
         </div>
         {action && (
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mt-2 md:mt-0">
             {action}
           </div>
         )}

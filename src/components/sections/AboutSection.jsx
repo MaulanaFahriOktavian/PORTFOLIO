@@ -33,8 +33,8 @@ export default function AboutSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="05"
-          title="PROFIL & SPESIFIKASI"
+          title="Tentang Saya"
+          subcopy="Membangun Solusi Digital dengan Kualitas & Dedikasi"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">

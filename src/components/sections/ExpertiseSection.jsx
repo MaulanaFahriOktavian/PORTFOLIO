@@ -53,8 +53,8 @@ export default function ExpertiseSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="03"
-          title="KEAHLIAN & TECH STACK"
+          title="Keahlian & Teknologi"
+          subcopy="Teknologi & Perangkat Lunak yang Saya Kuasai"
         />
 
         {/* Intro text */}

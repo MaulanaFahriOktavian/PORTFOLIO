@@ -42,8 +42,8 @@ export default function SelectedWorkSection({ onSelectProject }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <SectionHeader
-          index="01"
-          title="SELECTED WORK"
+          title="Karya & Proyek Terpilih"
+          subcopy="Portofolio Proyek Nyata & Eksplorasi Digital"
           action={
             /* Category Filter Links with natural green active pill */
             <div className="flex flex-wrap items-center gap-2">

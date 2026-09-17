@@ -52,8 +52,8 @@ export default function JourneySection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="04"
-          title="JOURNEY"
+          title="Perjalanan & Dedikasi"
+          subcopy="Jejak Langkah & Perkembangan Belajar"
         />
 
         {/* Clean Vertical Timeline */}

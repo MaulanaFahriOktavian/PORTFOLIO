@@ -56,8 +56,7 @@ export default function ContactSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          index="06"
-          title="KONTAK & TERHUBUNG"
+          title="Kontak & Kolaborasi"
         />
 
         <div className="max-w-3xl mb-8 sm:mb-14">
