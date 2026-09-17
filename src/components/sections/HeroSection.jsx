@@ -238,7 +238,7 @@ function DeveloperIdCard({ className = "max-w-[275px] sm:max-w-[290px]" }) {
             className="relative rounded-[17px] overflow-hidden flex flex-col justify-between"
             style={{
               background: "linear-gradient(180deg, #064e3b 0%, #047857 35%, #059669 70%, #022c22 100%)",
-              aspectRatio: "1 / 1.52",
+              aspectRatio: "1 / 1.58",
             }}
           >
             {/* Batik / Swirl Ornamental Flourish Watermark */}
@@ -277,96 +277,96 @@ function DeveloperIdCard({ className = "max-w-[275px] sm:max-w-[290px]" }) {
             </svg>
 
             {/* ── Photo 1: Physical Oval Punched Hole ── */}
-            <div className="pt-3 pb-1 flex justify-center relative z-20">
+            <div className="pt-2.5 pb-0.5 flex justify-center relative z-20">
               <div
-                className="w-12 h-3 rounded-full border border-black/25 flex items-center justify-center"
+                className="w-11 h-2.5 rounded-full border border-black/25 flex items-center justify-center"
                 style={{
                   background: "radial-gradient(ellipse at center, rgba(6,78,59,0.9) 0%, rgba(2,44,34,0.95) 100%)",
                 }}
               >
-                <div className="w-8 h-[1px] rounded-full bg-white/20 -mt-0.5" />
+                <div className="w-7 h-[1px] rounded-full bg-white/20 -mt-0.5" />
               </div>
             </div>
 
             {/* ── Photo 2: Institution & Department Header Bar ── */}
-            <div className="px-3 pt-0.5 pb-1 relative z-20 flex items-center justify-between text-white border-b border-emerald-400/20">
+            <div className="px-2.5 pt-0.5 pb-1 relative z-20 flex items-center justify-between text-white border-b border-emerald-400/20">
               <div className="flex items-center gap-1.5">
-                <div className="w-4 h-4 rounded-full bg-emerald-400/25 flex items-center justify-center border border-emerald-300/40 text-[9px] font-bold text-emerald-300">
+                <div className="w-3.5 h-3.5 rounded-full bg-emerald-400/25 flex items-center justify-center border border-emerald-300/40 text-[8px] font-bold text-emerald-300">
                   ★
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[8.5px] font-black uppercase tracking-wider leading-none">
+                  <span className="text-[8px] sm:text-[8.5px] font-black uppercase tracking-wider leading-none">
                     SMKN 1 BANGSRI
                   </span>
-                  <span className="text-[7px] font-semibold text-emerald-200 tracking-tight mt-0.5">
+                  <span className="text-[6.5px] sm:text-[7px] font-semibold text-emerald-200 tracking-tight mt-0.5">
                     REKAYASA PERANGKAT LUNAK &amp; GIM
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center gap-1">
-                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/30 text-[7px] font-mono font-bold tracking-wider text-emerald-200">
+                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/30 text-[6.5px] sm:text-[7px] font-mono font-bold tracking-wider text-emerald-200">
                   SMK BISA!
                 </span>
-                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/30 text-[7px] font-mono font-bold tracking-wider text-emerald-200">
+                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/30 text-[6.5px] sm:text-[7px] font-mono font-bold tracking-wider text-emerald-200">
                   MERDEKA
                 </span>
               </div>
             </div>
 
             {/* ── Photo 2: Giant Vertical Background Typography Behind Subject ── */}
-            <div className="absolute top-14 left-0.5 z-0 pointer-events-none select-none">
+            <div className="absolute top-12 left-0.5 z-0 pointer-events-none select-none">
               <span
-                className="text-[3.5rem] sm:text-[3.8rem] font-black text-white/[0.18] tracking-widest leading-none font-sans block uppercase"
+                className="text-[3.2rem] sm:text-[3.6rem] font-black text-white/[0.16] tracking-widest leading-none font-sans block uppercase"
                 style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
               >
                 FAHRI
               </span>
             </div>
 
-            <div className="absolute top-16 right-0.5 z-0 pointer-events-none select-none">
+            <div className="absolute top-14 right-0.5 z-0 pointer-events-none select-none">
               <span
-                className="text-[3.5rem] sm:text-[3.8rem] font-black text-white/[0.18] tracking-widest leading-none font-sans block uppercase"
+                className="text-[3.2rem] sm:text-[3.6rem] font-black text-white/[0.16] tracking-widest leading-none font-sans block uppercase"
                 style={{ writingMode: "vertical-rl" }}
               >
                 PPLG
               </span>
             </div>
 
-            {/* ── Photo 2: Cutout Subject (Fahri standing in front of vertical text) ── */}
-            <div className="relative z-10 w-full flex-1 flex items-end justify-center overflow-hidden -mb-1">
+            {/* ── Photo 2: Cutout Subject (Fahri uncropped, fully visible head to uniform) ── */}
+            <div className="relative z-10 w-full flex-1 flex items-end justify-center overflow-visible pt-1">
               <img
                 src={fahriPhoto}
                 alt="Maulana Fahri Oktavian"
-                className="w-[86%] max-h-[300px] object-contain object-bottom select-none scale-[1.04]"
+                className="w-[92%] max-h-[255px] sm:max-h-[285px] object-contain object-bottom select-none drop-shadow-[0_8px_18px_rgba(0,0,0,0.35)]"
                 loading="eager"
                 draggable={false}
               />
             </div>
 
-            {/* ── Photo 2: Dual Identity Bottom Banner (System Emerald Palette) ── */}
-            <div className="relative z-20 px-2.5 pb-2.5 pt-1.5 flex items-stretch gap-1.5 bg-gradient-to-t from-[#022c22]/95 via-[#064e3b]/80 to-transparent">
+            {/* ── Photo 2: Dual Identity Bottom Banner (No Truncation, Clean Sizing) ── */}
+            <div className="relative z-20 px-2 pb-2 pt-1 flex items-stretch gap-1.5 bg-gradient-to-t from-[#022c22] via-[#022c22]/95 to-transparent">
               {/* Left Block: Solid Emerald Green Box */}
-              <div className="bg-[#16a34a] rounded-md px-3 py-1.5 flex items-center justify-center shadow-md flex-none border border-emerald-300/30">
-                <span className="text-white text-sm sm:text-base font-black tracking-wider uppercase leading-none">
+              <div className="bg-[#16a34a] rounded-lg px-2.5 py-1.5 flex items-center justify-center shadow-md flex-none border border-emerald-300/40">
+                <span className="text-white text-xs sm:text-sm font-black tracking-wider uppercase leading-none">
                   FAHRI
                 </span>
               </div>
 
               {/* Right Block: Clean White Rounded Card with Brand & Tagline */}
-              <div className="flex-1 bg-white rounded-md px-2 py-1.5 flex items-center gap-1.5 shadow-lg border border-white">
+              <div className="flex-1 min-w-0 bg-white dark:bg-white rounded-lg px-2 py-1 flex items-center gap-1.5 shadow-md border border-white/80">
                 {/* Monogram / Logo Mark */}
-                <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-[#16a34a] to-[#22c55e] flex items-center justify-center text-white font-black text-[10px] flex-none shadow-sm">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gradient-to-tr from-[#16a34a] to-[#22c55e] flex items-center justify-center text-white font-black text-[9px] sm:text-[10px] flex-none shadow-xs">
                   <span className="font-mono">&lt;/&gt;</span>
                 </div>
 
-                {/* Typography Block */}
-                <div className="flex flex-col min-w-0">
-                  <h4 className="text-slate-950 font-black text-[11.5px] sm:text-[12.5px] leading-tight tracking-tight truncate">
+                {/* Typography Block - No Cutoff! */}
+                <div className="flex flex-col min-w-0 flex-1 justify-center">
+                  <h4 className="text-slate-950 font-black text-[11px] sm:text-[12.5px] leading-tight tracking-tight whitespace-nowrap">
                     Web Developer
                   </h4>
-                  <p className="text-emerald-800 text-[8px] sm:text-[9px] leading-tight font-medium truncate mt-0.5">
-                    UI/UX Designer · SMKN 1 Bangsri
+                  <p className="text-emerald-800 text-[8px] sm:text-[9px] leading-tight font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
+                    UI/UX Designer · PPLG
                   </p>
                 </div>
               </div>
@@ -406,7 +406,7 @@ export default function HeroSection({ onExploreClick, onOpenResume }) {
 
           {/* ── Hero Portrait ID Card (Mobile - Di Paling Atas, Proporsional) ── */}
           <motion.div {...fUp(0)} className="w-full flex justify-center pt-1 pb-1">
-            <DeveloperIdCard className="max-w-[215px] sm:max-w-[245px]" />
+            <DeveloperIdCard className="max-w-[240px] sm:max-w-[275px]" />
           </motion.div>
 
           {/* Status badge */}

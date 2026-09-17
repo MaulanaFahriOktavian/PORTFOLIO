@@ -1,45 +1,92 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Layers, Database, GitBranch, Users, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Layers, Database, GitBranch, Users, CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
 import SectionHeader from "../ui/SectionHeader";
 import { Floating3DCube, FloatingLightning } from "../ui/Floating3DAssets";
 
 const pillars = [
   {
+    id: "dual-competency",
     icon: Layers,
     badge: "DUAL COMPETENCY",
     title: "Bridge UI/UX ke Full-Stack Code",
+    shortDesc: "Mampu merancang antarmuka di Figma dan langsung mengeksekusinya menjadi kode fungsional tanpa distorsi desain.",
     description:
-      "Mampu merancang antarmuka terstruktur di Figma (Auto Layout, Tokens) dan langsung mewujudkannya menjadi kode fungsional dengan React, Tailwind CSS, dan Laravel tanpa distorsi desain.",
-    points: ["Desain Sistem & Prototyping Figma", "Komponen Modular & Responsif", "Integrasi Backend Laravel & Blade"],
+      "Mampu merancang antarmuka terstruktur di Figma (Auto Layout, Design System, Tokens) dan langsung mewujudkannya menjadi kode fungsional dengan React, Tailwind CSS, dan Laravel tanpa distorsi desain.",
+    points: [
+      "Desain Sistem & Prototyping Figma Terstandar",
+      "Komponen Modular & Antarmuka Responsif",
+      "Integrasi Backend Laravel, Blade & REST API"
+    ],
   },
   {
+    id: "production-tested",
     icon: Database,
     badge: "PRODUCTION TESTED",
     title: "Terbukti Membangun Sistem Nyata",
+    shortDesc: "Menyelesaikan dan men-deploy sistem DIDISPEN yang aktif digunakan di SMKN 1 Bangsri dengan alur multi-peran.",
     description:
-      "Bukan sekadar latihan tutorial. Berhasil menyelesaikan dan men-deploy sistem DIDISPEN yang aktif digunakan di lingkungan SMKN 1 Bangsri dengan alur izin multi-peran yang ketat.",
-    points: ["Arsitektur Database Relasional MySQL", "Autentikasi Multi-Peran (Role-based)", "Diuji untuk Penilaian UKK Resmi"],
+      "Bukan sekadar latihan tutorial. Berhasil menyelesaikan dan men-deploy sistem DIDISPEN yang aktif digunakan di lingkungan SMKN 1 Bangsri dengan alur izin digital multi-peran yang ketat dan aman.",
+    points: [
+      "Arsitektur Database Relasional MySQL Terstruktur",
+      "Autentikasi Multi-Peran (Role-Based Access Control)",
+      "Diuji Nyata untuk Penilaian Uji Kompetensi Keahlian (UKK)"
+    ],
   },
   {
+    id: "industry-standards",
     icon: GitBranch,
     badge: "INDUSTRY STANDARDS",
     title: "Workflow & Tooling Standar Industri",
+    shortDesc: "Terbiasa version control Git/GitHub, pengujian API Postman, dan penulisan kode bersih yang mudah dipelihara.",
     description:
-      "Terbiasa menggunakan version control Git & GitHub, pengujian RESTful API dengan Postman, serta penulisan kode bersih yang mudah dipelihara oleh tim pengembang.",
-    points: ["Git Version Control & Branching", "API Testing & HTTP Debugging", "Struktur Folder & Penamaan Standar"],
+      "Terbiasa menggunakan version control Git & GitHub secara disiplin, pengujian RESTful API dengan Postman, serta penulisan kode bersih yang terstruktur dan mudah dipelihara oleh tim pengembang.",
+    points: [
+      "Git Version Control, Branching & Commit Disiplin",
+      "API Testing & HTTP Debugging via Postman",
+      "Struktur Folder Rapi & Standar Penamaan Bersih"
+    ],
   },
   {
+    id: "work-ethic",
     icon: Users,
     badge: "WORK ETHIC",
     title: "Kolaborasi Tim & Cepat Beradaptasi",
+    shortDesc: "Berpengalaman kerja tim solid di divisi TIK organisasi, disiplin waktu, dan antusias mempelajari tech stack baru.",
     description:
       "Memiliki pengalaman kerja tim solid dalam Tim 3M dan divisi TIK organisasi sekolah. Memiliki komitmen tinggi, disiplin waktu, dan haus mempelajari teknologi baru yang digunakan perusahaan.",
-    points: ["Komunikasi Teknis yang Terbuka", "Tanggung Jawab Penyelesaian Tugas", "Siap Belajar Tech Stack Baru"],
+    points: [
+      "Komunikasi Teknis yang Terbuka & Solutif",
+      "Tanggung Jawab Penuh atas Penyelesaian Tugas",
+      "Siap & Cepat Belajar Tech Stack Baru Perusahaan"
+    ],
   },
 ];
 
 export default function WhyHireSection({ onOpenResume }) {
+  const [expandedIds, setExpandedIds] = useState(new Set());
+
+  const toggleExpand = (id) => {
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const allExpanded = expandedIds.size === pillars.length;
+  const toggleAll = () => {
+    if (allExpanded) {
+      setExpandedIds(new Set());
+    } else {
+      setExpandedIds(new Set(pillars.map((p) => p.id)));
+    }
+  };
+
   return (
     <section
       id="why-hire"
@@ -62,11 +109,24 @@ export default function WhyHireSection({ onOpenResume }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           title="Komitmen & Nilai Tambah"
+          action={
+            <button
+              onClick={toggleAll}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-mono text-[11px] sm:text-xs text-gray-600 dark:text-gray-300 hover:text-[#111827] dark:hover:text-white bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors shadow-xs cursor-pointer active:scale-95"
+            >
+              <span>{allExpanded ? "Ringkas Semua" : "Buka Semua Detail"}</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E] transition-transform duration-300 ${
+                  allExpanded ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          }
         />
 
         {/* Introduction Pitch */}
-        <div className="max-w-3xl mb-6 sm:mb-12 text-center md:text-left mx-auto md:mx-0">
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-2.5 sm:mb-3">
+        <div className="max-w-3xl mb-6 sm:mb-10 text-center md:text-left mx-auto md:mx-0">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-2 sm:mb-2.5">
             Mengapa Maulana Fahri siap berkontribusi dalam tim Anda?
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 font-light leading-[1.75]">
@@ -78,46 +138,84 @@ export default function WhyHireSection({ onOpenResume }) {
         <div className="grid grid-cols-2 gap-2.5 sm:gap-5 md:gap-6 mb-8 sm:mb-12">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
+            const isExpanded = expandedIds.has(pillar.id);
+
             return (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileTap={{ scale: 0.99 }}
-                className="group p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_12px_32px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)] hover:-translate-y-1 transition-all duration-300 shadow-sm flex flex-col justify-between"
+              <div
+                key={pillar.id}
+                className="group p-3 sm:p-5 md:p-7 rounded-xl sm:rounded-2xl md:rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_8px_24px_rgba(22,163,74,0.08)] dark:hover:shadow-[0_8px_24px_rgba(34,197,94,0.15)] transition-colors duration-150 sm:transition-all sm:duration-200 shadow-xs flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Icon & Badge */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-3 mb-2 sm:mb-5">
-                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-[#16A34A] dark:text-[#22C55E] group-hover:scale-110 group-hover:border-[#16A34A] dark:group-hover:border-[#22C55E] group-hover:shadow-[0_0_20px_rgba(22,163,74,0.25)] transition-all">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-3 mb-2 sm:mb-4">
+                    <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-[#16A34A] dark:text-[#22C55E] group-hover:scale-105 transition-transform">
+                      <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="font-mono text-[8px] sm:text-[10px] text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 truncate">
+                    <span className="font-mono text-[7.5px] sm:text-[9.5px] text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 truncate">
                       {pillar.badge}
                     </span>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xs sm:text-base md:text-xl font-bold text-[#111827] dark:text-white mb-1 sm:mb-2 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors line-clamp-1 sm:line-clamp-none">
+                  {/* Title & Short Summary */}
+                  <h3 className="text-xs sm:text-base md:text-lg font-bold text-[#111827] dark:text-white mb-1 sm:mb-1.5 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors leading-tight">
                     {pillar.title}
                   </h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-300 font-light leading-snug line-clamp-2 sm:line-clamp-none mb-2 sm:mb-4">
-                    {pillar.description}
+                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-2.5 sm:mb-3">
+                    {pillar.shortDesc}
                   </p>
                 </div>
 
-                {/* Bullet Points */}
-                <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-white/10 space-y-1 sm:space-y-1.5">
-                  {pillar.points.map((pt) => (
-                    <div key={pt} className="flex items-start gap-1 sm:gap-2 text-[9.5px] sm:text-xs text-gray-600 dark:text-gray-300">
-                      <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#16A34A] dark:text-[#22C55E] shrink-0 mt-0.5" />
-                      <span className="leading-snug line-clamp-1 sm:line-clamp-none">{pt}</span>
-                    </div>
-                  ))}
+                {/* Detail Button */}
+                <div className="pt-2 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
+                  <span className="hidden sm:inline-block text-[10px] font-mono text-gray-400 dark:text-gray-500">
+                    {isExpanded ? "Rincian lengkap" : "3 poin pembuktian"}
+                  </span>
+                  <button
+                    onClick={() => toggleExpand(pillar.id)}
+                    className="inline-flex items-center justify-center gap-1 sm:gap-1.5 w-full sm:w-auto px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-mono font-medium text-[#16A34A] dark:text-[#22C55E] bg-emerald-50 dark:bg-emerald-500/10 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 border border-emerald-200 dark:border-emerald-500/30 transition-colors cursor-pointer shadow-xs active:scale-95"
+                  >
+                    <span>{isExpanded ? "Tutup Detail" : "Lihat Detail"}</span>
+                    <ChevronDown
+                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform duration-300 ${
+                        isExpanded ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
                 </div>
-              </motion.div>
+
+                {/* Expanded Full Details */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-2.5 sm:pt-3.5 mt-2 sm:mt-2.5 border-t border-dashed border-gray-200 dark:border-white/10">
+                        {/* Full Detailed Description */}
+                        <p className="text-[10.5px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-200 font-light leading-relaxed mb-2.5">
+                          {pillar.description}
+                        </p>
+
+                        {/* Full Bullet Checklist */}
+                        <div className="space-y-1.5">
+                          <span className="text-[9.5px] sm:text-[10.5px] font-mono font-bold uppercase tracking-wider text-[#16A34A] dark:text-[#22C55E] block mb-1">
+                            Poin Pembuktian:
+                          </span>
+                          {pillar.points.map((pt) => (
+                            <div key={pt} className="flex items-start gap-1.5 text-[10px] sm:text-xs text-gray-600 dark:text-gray-300 leading-snug">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E] shrink-0 mt-0.5" />
+                              <span>{pt}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             );
           })}
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export default function ProjectCard({ project, index = 0, onSelectProject }) {
@@ -22,19 +21,14 @@ export default function ProjectCard({ project, index = 0, onSelectProject }) {
   const isFeatured = project.featured;
 
   return (
-    <motion.article
+    <article
       data-project-card="true"
       onClick={handleClick}
-      whileTap={{ scale: 0.98 }}
-      className={`group relative flex flex-col justify-between rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer ${
+      className={`group relative flex flex-col justify-between rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-4 md:p-6 cursor-pointer transition-colors duration-150 sm:transition-all sm:duration-200 ${
         isFeatured
-          ? "bg-white dark:bg-[#111827] border-2 border-[#16A34A] dark:border-[#22C55E] shadow-[0_8px_30px_rgba(22,163,74,0.18)] dark:shadow-[0_8px_30px_rgba(34,197,94,0.25)] -translate-y-1"
-          : "bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_8px_30px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_8px_30px_rgba(34,197,94,0.2)] hover:-translate-y-1"
+          ? "bg-white dark:bg-[#111827] border-2 border-[#16A34A] dark:border-[#22C55E] shadow-xs sm:shadow-[0_8px_25px_rgba(22,163,74,0.18)] dark:sm:shadow-[0_8px_25px_rgba(34,197,94,0.25)] sm:hover:-translate-y-0.5"
+          : "bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] shadow-xs hover:shadow-md sm:hover:-translate-y-0.5"
       }`}
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
     >
       {/* Top Preview Image Container */}
       <div className="relative aspect-[16/10] w-full rounded-lg sm:rounded-xl overflow-hidden bg-gray-50 dark:bg-[#0B111A] border border-gray-100 dark:border-white/5 mb-2 sm:mb-3 flex items-center justify-center">
@@ -42,7 +36,7 @@ export default function ProjectCard({ project, index = 0, onSelectProject }) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-top sm:transition-transform sm:duration-300 sm:group-hover:scale-105"
             loading="lazy"
           />
         ) : (
@@ -107,6 +101,6 @@ export default function ProjectCard({ project, index = 0, onSelectProject }) {
           ))}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

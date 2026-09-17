@@ -58,9 +58,9 @@ export default function SelectedWorkSection({ onSelectProject }) {
                   <button
                     key={cat.id}
                     onClick={() => handleCategoryChange(cat.id)}
-                    className={`relative flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs font-medium transition-all duration-300 cursor-pointer ${
+                    className={`relative flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs font-medium transition-colors duration-150 cursor-pointer ${
                       isActive
-                        ? "bg-white dark:bg-[#111827] text-gray-900 dark:text-white shadow-sm border border-gray-200/80 dark:border-white/15"
+                        ? "bg-white dark:bg-[#111827] text-gray-900 dark:text-white shadow-xs border border-gray-200/80 dark:border-white/15"
                         : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                     }`}
                   >
@@ -95,7 +95,7 @@ export default function SelectedWorkSection({ onSelectProject }) {
         />
 
         {/* Professional Discipline Brief & Tech Focus Bar */}
-        <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-white/70 dark:bg-[#0B1120]/70 border border-gray-200/80 dark:border-white/10 backdrop-blur-sm shadow-xs transition-all duration-300">
+        <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-white/70 dark:bg-[#0B1120]/70 border border-gray-200/80 dark:border-white/10 backdrop-blur-sm shadow-xs transition-colors duration-150">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex items-start sm:items-center gap-3">
               <div
