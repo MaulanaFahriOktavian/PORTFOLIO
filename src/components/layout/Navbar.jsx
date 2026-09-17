@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Language", href: "#expertise" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Beranda", href: "#hero" },
+  { label: "Proyek", href: "#work" },
+  { label: "Keahlian", href: "#expertise" },
+  { label: "Pengalaman", href: "#experience" },
+  { label: "Tentang", href: "#about" },
+  { label: "Kontak", href: "#contact" },
 ];
 
 export default function Navbar({
@@ -67,15 +67,15 @@ export default function Navbar({
         {/* Floating Pill Container */}
         <div className="bg-white/95 dark:bg-[#111827]/95 backdrop-blur-md rounded-full px-5 sm:px-8 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_8px_30px_rgba(22,163,74,0.10)] dark:shadow-[0_12px_35px_rgba(0,0,0,0.5)] border border-[rgba(22,163,74,0.14)] dark:border-[rgba(34,197,94,0.15)] transition-all duration-300">
           
-          {/* Left: Brand "Portfolio." Wordmark */}
+          {/* Left: Personal Brand Wordmark */}
           <a
             href="/"
             onClick={handleBrandClick}
             className="group flex items-center select-none"
-            aria-label="Portfolio Home"
+            aria-label="Fahri Home"
           >
             <span className="font-sans font-bold text-xl sm:text-2xl tracking-tight text-[#16A34A] dark:text-[#22C55E] transition-transform duration-200 group-hover:scale-105">
-              Portfolio<span className="text-[#22C55E] dark:text-[#4ADE80]">.</span>
+              Fahri<span className="hidden sm:inline ml-1 font-bold">Oktavian</span><span className="text-[#22C55E] dark:text-[#4ADE80]">.</span>
             </span>
           </a>
 

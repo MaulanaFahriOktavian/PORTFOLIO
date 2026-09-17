@@ -78,15 +78,6 @@ export default function WhyHireSection({ onOpenResume }) {
     });
   };
 
-  const allExpanded = expandedIds.size === pillars.length;
-  const toggleAll = () => {
-    if (allExpanded) {
-      setExpandedIds(new Set());
-    } else {
-      setExpandedIds(new Set(pillars.map((p) => p.id)));
-    }
-  };
-
   return (
     <section
       id="why-hire"
@@ -109,19 +100,6 @@ export default function WhyHireSection({ onOpenResume }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           title="Komitmen & Nilai Tambah"
-          action={
-            <button
-              onClick={toggleAll}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-mono text-[11px] sm:text-xs text-gray-600 dark:text-gray-300 hover:text-[#111827] dark:hover:text-white bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors shadow-xs cursor-pointer active:scale-95"
-            >
-              <span>{allExpanded ? "Ringkas Semua" : "Buka Semua Detail"}</span>
-              <ChevronDown
-                className={`w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E] transition-transform duration-300 ${
-                  allExpanded ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-          }
         />
 
         {/* Introduction Pitch */}
