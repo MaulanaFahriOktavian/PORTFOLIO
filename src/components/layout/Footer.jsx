@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <footer className="py-12 sm:py-16 border-t border-gray-200 dark:border-white/10 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-1.5">
               <span className="font-sans font-bold text-base tracking-tight text-[#111827] dark:text-white">
                 FAHRI
@@ -23,12 +23,12 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-gray-500 dark:text-gray-400">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-xs font-mono text-gray-500 dark:text-gray-400">
             <span>{profileData.location}</span>
             <span>© {profileData.year}</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] transition-colors ml-auto sm:ml-0 group font-medium cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-gray-700 dark:text-gray-300 hover:text-[#16A34A] dark:hover:text-[#22C55E] transition-colors group font-medium cursor-pointer"
               aria-label="Back to top"
             >
               <span>BACK TO TOP</span>

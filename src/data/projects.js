@@ -13,9 +13,22 @@ import smartLearningImg from "../assets/images/projects/figma/smart-learning.png
 import voktadevImg from "../assets/images/projects/figma/voktadev.png";
 
 export const categories = [
-  { id: "all", label: "Semua Proyek" },
-  { id: "fullstack", label: "Web Development" },
-  { id: "uiux", label: "UI/UX & Figma" },
+  {
+    id: "fullstack",
+    label: "Web Development",
+    tag: "Coding & System",
+    badge: "Coding",
+    description: "Rekayasa perangkat lunak fungsional dengan arsitektur backend Laravel, database MySQL, dan antarmuka responsif Tailwind CSS.",
+    focusList: ["Laravel 11", "PHP 8.2", "MySQL", "Tailwind CSS", "REST API"],
+  },
+  {
+    id: "uiux",
+    label: "UI/UX Figma",
+    tag: "Design & Prototype",
+    badge: "Figma",
+    description: "Perancangan pengalaman pengguna (UX), wireframing terstruktur, design system, dan prototipe interaktif di Figma.",
+    focusList: ["Figma Design System", "Interactive Prototype", "Wireframing", "User Flow", "UI Components"],
+  },
 ];
 
 export const projects = [

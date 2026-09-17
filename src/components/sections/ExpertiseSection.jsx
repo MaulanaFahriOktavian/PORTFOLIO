@@ -58,14 +58,14 @@ export default function ExpertiseSection() {
         />
 
         {/* Intro text */}
-        <div className="max-w-2xl mb-8 sm:mb-12">
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+        <div className="max-w-2xl mb-6 sm:mb-12 text-center md:text-left mx-auto md:mx-0">
+          <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 font-light leading-[1.75]">
             Teknologi, bahasa pemrograman, dan tools pengembangan web yang aktif saya pelajari dan gunakan dalam pembuatan proyek web.
           </p>
         </div>
 
         {/* Direct Logos with Drop Shadows - Responsive 4 cols on mobile, 6 cols on desktop */}
-        <div className="grid grid-cols-4 md:grid-cols-6 gap-y-6 sm:gap-y-10 gap-x-2 sm:gap-x-8 max-w-4xl mx-auto py-2 sm:py-6 place-items-center">
+        <div className="grid grid-cols-4 md:grid-cols-6 gap-y-4 sm:gap-y-8 gap-x-2 sm:gap-x-6 max-w-4xl mx-auto py-1 sm:py-6 place-items-center">
           {technologies.map((tech, idx) => {
             const Icon = tech.icon;
             return (
@@ -76,7 +76,8 @@ export default function ExpertiseSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.03 }}
                 whileHover={{ y: -6, scale: 1.08 }}
-                className="flex flex-col items-center group cursor-pointer w-full max-w-[90px]"
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center group cursor-pointer w-full max-w-[85px] sm:max-w-[90px]"
               >
                 {/* Logo Container with Physical Drop Shadow & Ambient Glow */}
                 <div className="relative w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">

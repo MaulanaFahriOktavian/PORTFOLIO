@@ -65,17 +65,17 @@ export default function WhyHireSection({ onOpenResume }) {
         />
 
         {/* Introduction Pitch */}
-        <div className="max-w-3xl mb-8 sm:mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-3">
+        <div className="max-w-3xl mb-6 sm:mb-12 text-center md:text-left mx-auto md:mx-0">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-2.5 sm:mb-3">
             Mengapa Maulana Fahri siap berkontribusi dalam tim Anda?
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 font-light leading-[1.75]">
             Sebagai siswa jurusan PPLG dari SMK Negeri 1 Bangsri, saya tidak hanya membawa pemahaman dasar, melainkan antusiasme belajar tinggi dan kesiapan praktik langsung dengan etos kerja yang disiplin.
           </p>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-12">
+        {/* 4 Pillars Grid (2 Columns on Mobile & Desktop) */}
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-5 md:gap-6 mb-8 sm:mb-12">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -85,34 +85,35 @@ export default function WhyHireSection({ onOpenResume }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_12px_32px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)] hover:-translate-y-1 transition-all duration-300 shadow-sm flex flex-col justify-between"
+                whileTap={{ scale: 0.99 }}
+                className="group p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 hover:border-[#16A34A] dark:hover:border-[#22C55E] hover:shadow-[0_12px_32px_rgba(22,163,74,0.12)] dark:hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)] hover:-translate-y-1 transition-all duration-300 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Icon & Badge */}
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-[#16A34A] dark:text-[#22C55E] group-hover:scale-110 group-hover:border-[#16A34A] dark:group-hover:border-[#22C55E] group-hover:shadow-[0_0_20px_rgba(22,163,74,0.25)] transition-all">
-                      <Icon className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-3 mb-2 sm:mb-5">
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-[#16A34A] dark:text-[#22C55E] group-hover:scale-110 group-hover:border-[#16A34A] dark:group-hover:border-[#22C55E] group-hover:shadow-[0_0_20px_rgba(22,163,74,0.25)] transition-all">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="font-mono text-[10px] text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80">
+                    <span className="font-mono text-[8px] sm:text-[10px] text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 truncate">
                       {pillar.badge}
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-[#111827] dark:text-white mb-3 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors">
+                  <h3 className="text-xs sm:text-base md:text-xl font-bold text-[#111827] dark:text-white mb-1 sm:mb-2 group-hover:text-[#16A34A] dark:group-hover:text-[#22C55E] transition-colors line-clamp-1 sm:line-clamp-none">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-6">
+                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-300 font-light leading-snug line-clamp-2 sm:line-clamp-none mb-2 sm:mb-4">
                     {pillar.description}
                   </p>
                 </div>
 
                 {/* Bullet Points */}
-                <div className="pt-4 border-t border-gray-100 dark:border-white/10 space-y-2">
+                <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-white/10 space-y-1 sm:space-y-1.5">
                   {pillar.points.map((pt) => (
-                    <div key={pt} className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#22C55E] shrink-0" />
-                      <span>{pt}</span>
+                    <div key={pt} className="flex items-start gap-1 sm:gap-2 text-[9.5px] sm:text-xs text-gray-600 dark:text-gray-300">
+                      <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#16A34A] dark:text-[#22C55E] shrink-0 mt-0.5" />
+                      <span className="leading-snug line-clamp-1 sm:line-clamp-none">{pt}</span>
                     </div>
                   ))}
                 </div>
