@@ -86,8 +86,12 @@ export default function App() {
   };
 
   // Current project data and next project preview for sequential reading
-  const currentProject = currentSlug ? projects.find((p) => p.slug === currentSlug) : null;
-  const currentIndex = currentProject ? projects.findIndex((p) => p.slug === currentSlug) : -1;
+  const currentProject = currentSlug
+    ? projects.find((p) => p.slug === currentSlug || p.aliases?.includes(currentSlug))
+    : null;
+  const currentIndex = currentProject
+    ? projects.findIndex((p) => p.slug === currentProject.slug)
+    : -1;
   const nextProject =
     currentIndex !== -1 ? projects[(currentIndex + 1) % projects.length] : null;
 

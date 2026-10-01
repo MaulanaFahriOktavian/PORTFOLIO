@@ -28,23 +28,23 @@ const timelineItems = [
     tags: ["Laravel", "MySQL", "Tailwind CSS", "Figma", "PRD/ERD", "Multi-Role Auth"]
   },
 
-  // ── 2. Proyek: BeWood ──
+  // ── 2. Proyek: Gembol Furniture ──
   {
-    id: "bewood",
+    id: "gembol-furniture",
     type: "project",
     category: "PENGALAMAN PROYEK",
     badge: "E-Commerce Platform",
     period: "2025",
     role: "Full-Stack Web Developer",
-    title: "BeWood (Gembol Jati Furniture)",
+    title: "Gembol Furniture — E-Commerce & Katalog Mebel",
     institution: "Produksi Mebel Jepara",
     location: "Jepara, Jawa Tengah",
     shortSummary:
-      "Platform e-commerce dan katalog interaktif mebel Jepara dengan dashboard manajemen inventaris toko berbasis Laravel & Livewire.",
+      "Platform e-commerce dan katalog interaktif mebel Jepara dengan dashboard manajemen inventaris toko berbasis Laravel, Livewire, & MySQL.",
     bullets: [
       "Membangun platform e-commerce dan katalog produk mebel Jepara interaktif berbasis Laravel, Livewire, dan MySQL.",
-      "Mengembangkan tampilan antarmuka responsif dengan Tailwind CSS.",
-      "Mengimplementasikan dashboard manajemen inventaris bagi admin toko mebel."
+      "Mengembangkan tampilan antarmuka responsif bernuansa kayu jati premium dengan Tailwind CSS.",
+      "Mengimplementasikan dashboard manajemen inventaris bagi admin serta tombol pemesanan & konsultasi WhatsApp."
     ],
     tags: ["Laravel", "Livewire", "MySQL", "Tailwind CSS", "E-Commerce", "Inventory"]
   },

@@ -171,7 +171,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               </div>
             </div>
 
-            {/* 5. Pengalaman Proyek (DIDISPEN & BeWood Sesuai CV) */}
+            {/* 5. Pengalaman Proyek (DIDISPEN & Gembol Furniture) */}
             <div>
               <h2 className="font-mono text-xs text-[#16A34A] dark:text-[#22C55E] uppercase tracking-wider font-bold mb-3">
                 PENGALAMAN PROYEK
@@ -193,11 +193,11 @@ export default function ResumeModal({ isOpen, onClose }) {
                   </ul>
                 </div>
 
-                {/* BeWood */}
+                {/* Gembol Furniture */}
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#111827] border border-gray-200 dark:border-white/10">
                   <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                     <h3 className="text-xs sm:text-sm font-bold text-[#111827] dark:text-white">
-                      BeWood (Gembol Jati Furniture)
+                      Gembol Furniture – E-Commerce Mebel Jepara
                     </h3>
                     <span className="text-xs font-mono text-[#16A34A] dark:text-[#22C55E] font-semibold">
                       Full-Stack Web Developer
@@ -205,7 +205,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   </div>
                   <ul className="text-xs text-gray-600 dark:text-gray-300 list-disc list-inside space-y-1 pt-1">
                     <li>Membangun platform e-commerce dan katalog produk mebel Jepara interaktif menggunakan Laravel, Livewire, dan MySQL.</li>
-                    <li>Mengembangkan tampilan antarmuka yang responsif dengan Tailwind CSS serta mengimplementasikan dashboard manajemen inventaris bagi admin.</li>
+                    <li>Mengembangkan tampilan antarmuka responsif bernuansa kayu jati premium dengan Tailwind CSS serta mengimplementasikan dashboard manajemen inventaris admin.</li>
                   </ul>
                 </div>
               </div>

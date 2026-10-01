@@ -3,12 +3,12 @@
  * Personal Portfolio — Maulana Fahri Oktavian
  * 
  * Synchronized with official Curriculum Vitae (CV).
- * Projects: DIDISPEN & BeWood (Gembol Jati Furniture) + Figma UI/UX Design Systems.
+ * Projects: DIDISPEN & Gembol Furniture (E-Commerce Mebel Jepara) + Figma UI/UX Design Systems.
  */
 
 // Import Project Images
 import didispenImg from "../assets/images/projects/laravel/didispen.png";
-import bewoodImg from "../assets/images/projects/laravel/bewood.png";
+import gembolFurnitureImg from "../assets/images/projects/laravel/gembol-furniture.png";
 import smartLearningImg from "../assets/images/projects/figma/smart-learning.png";
 import voktadevImg from "../assets/images/projects/figma/voktadev.png";
 
@@ -77,10 +77,11 @@ export const projects = [
     result: "Aplikasi berhasil diselesaikan, diuji, dan diimplementasikan sebagai sistem dispensasi resmi di lingkungan SMKN 1 Bangsri."
   },
 
-  // ── 2. BEWOOD (Official CV Project) ──
+  // ── 2. GEMBOL FURNITURE (Official Project) ──
   {
-    slug: "bewood-gembol-jati-furniture",
-    title: "BeWood (Gembol Jati Furniture)",
+    slug: "gembol-furniture",
+    aliases: ["bewood-gembol-jati-furniture"],
+    title: "Gembol Furniture — E-Commerce & Katalog Mebel Jepara",
     category: "fullstack",
     categoryLabel: "Web Development",
     badge: "E-Commerce Platform",
@@ -89,37 +90,38 @@ export const projects = [
     role: "Full-Stack Web Developer",
     type: "E-Commerce & Inventory Web",
     status: "Production Ready",
-    shortDescription: "Platform e-commerce dan katalog produk mebel Jepara interaktif berbasis Laravel, Livewire, MySQL, dan dashboard manajemen inventaris.",
-    statement: "Membangun platform e-commerce dan katalog produk mebel Jepara interaktif menggunakan Laravel, Livewire, dan MySQL dengan antarmuka responsif Tailwind CSS.",
-    image: bewoodImg,
+    shortDescription: "Platform e-commerce dan katalog produk mebel Jepara interaktif berbasis Laravel, Livewire, MySQL, dan antarmuka modern bernuansa kayu jati premium.",
+    statement: "Crafted for Comfort. Made for Life. Platform e-commerce mebel jati Jepara dengan katalog interaktif, manajemen inventaris, dan pengalaman belanja modern.",
+    image: gembolFurnitureImg,
     liveUrl: null,
-    githubUrl: "https://github.com/MaulanaFahriOktavian",
+    githubUrl: "https://github.com/MaulanaFahriOktavian/Gembol_furniture",
     prototypeUrl: null,
     techSummary: ["Laravel", "Livewire", "MySQL", "Tailwind CSS"],
     techStack: {
       frontend: ["Tailwind CSS", "Livewire", "Blade Templates", "JavaScript"],
       backend: ["Laravel", "PHP 8.2", "MySQL"],
-      design: ["Responsive E-Commerce UI", "Admin Dashboard System"],
+      design: ["Modern Furniture E-Commerce UI", "Responsive Web Design", "Admin Dashboard System"],
       tools: ["Git", "GitHub", "Visual Studio Code", "Laragon"]
     },
     overview: {
-      about: "BeWood adalah platform web e-commerce dan katalog produk mebel khas Jepara (Gembol Jati Furniture) yang dirancang untuk memamerkan kerajinan kayu jati unggulan kepada pelanggan secara interaktif.",
-      targetUser: "Pembeli furniture lokal dan nasional, arsitek interior, serta pengelola toko mebel (admin).",
-      problem: "Pemasaran mebel konvensional membutuhkan katalog fisik atau chat manual yang lambat dalam memberikan informasi stok, spesifikasi dimensi kayu, dan estimasi harga.",
-      goal: "Menyediakan katalog digital interaktif dengan navigasi kategori dinamis serta dashboard inventaris terpusat bagi admin toko mebel."
+      about: "Gembol Furniture adalah platform web e-commerce dan katalog produk mebel khas Jepara yang dirancang untuk memamerkan kerajinan kayu jati solid berkualitas tinggi kepada pelanggan secara interaktif. Mengusung konsep 'Crafted for Comfort. Made for Life', platform ini menghadirkan pengalaman visual elegan yang memudahkan calon pembeli menjelajahi koleksi ruang keluarga, ruang tamu, hingga berkonsultasi langsung dengan pengrajin.",
+      targetUser: "Pembeli furniture rumah tangga dan komersial, desainer interior, arsitek, serta pengelola toko mebel Jepara.",
+      problem: "Pemasaran mebel konvensional membutuhkan katalog fisik atau chat manual yang lambat dalam menyajikan ketersediaan stok, variasi koleksi living room, spesifikasi dimensi kayu, dan estimasi harga.",
+      goal: "Membangun platform digital interaktif dengan navigasi koleksi yang mulus, tampilan katalog visual modern yang memikat, serta dashboard inventaris terpusat bagi admin toko mebel."
     },
-    roleDetails: "Sebagai Full-Stack Web Developer, saya membangun platform dari arsitektur backend hingga frontend: mengimplementasikan komponen interaktif Livewire, merancang basis data produk mebel di MySQL, menata UI responsif dengan Tailwind CSS, serta membangun modul dashboard inventaris admin.",
+    roleDetails: "Sebagai Full-Stack Web Developer, saya membangun platform dari arsitektur backend hingga frontend: mengimplementasikan landing page elegan bertema 'Crafted for Comfort. Made for Life', komponen interaktif Livewire untuk penjelajahan katalog, merancang basis data relasional mebel di MySQL, menata UI responsif dengan Tailwind CSS, serta mengintegrasikan tombol konsultasi langsung via WhatsApp.",
     features: [
-      "Katalog produk mebel Jepara interaktif dengan penyaringan kategori dinamis (kursi, meja, lemari, gembol jati)",
-      "Tampilan antarmuka responsif modern berbasis Tailwind CSS yang nyaman diakses di smartphone maupun desktop",
+      "Hero showcase elegan 'Crafted for Comfort. Made for Life' dengan sorotan koleksi Modern Living Room dan rating kepuasan pelanggan",
+      "Katalog produk mebel Jepara interaktif dengan penyaringan kategori dinamis (living room, kursi, meja, lemari jati solid)",
+      "Tampilan antarmuka responsif modern berbasis Tailwind CSS yang nyaman dan estetik diakses di smartphone maupun desktop",
       "Komponen interaktif real-time menggunakan Laravel Livewire tanpa reload halaman penuh",
       "Dashboard manajemen inventaris bagi admin untuk menambah, mengubah, dan memantau ketersediaan stok produk",
-      "Sistem pemesanan produk terintegrasi dengan tombol konsultasi langsung ke WhatsApp pengrajin"
+      "Tombol cepat 'Chat Konsultasi' terintegrasi untuk komunikasi langsung antara calon pembeli dan pengrajin Jepara"
     ],
-    designAndDevelopment: "Menggunakan nuansa visual hangat yang mencerminkan keaslian kayu jati Jepara, dipadukan dengan tipografi modern dan layout grid produk yang bersih agar detail serat kayu terlihat menonjol.",
-    challenge: "Mengelola variasi spesifikasi produk mebel kustom dan memastikan katalog dapat dimuat dengan cepat meskipun memuat gambar produk beresolusi tinggi.",
-    solution: "Mengoptimalkan struktur query basis data MySQL serta mengimplementasikan lazy loading pada aset gambar produk mebel.",
-    result: "Platform e-commerce mebel fungsional yang memudahkan pelanggan menjelajah produk sekaligus menyederhanakan manajemen stok admin."
+    designAndDevelopment: "Menggunakan nuansa visual hangat dan elegan yang mencerminkan keaslian serta kemewahan kayu jati Jepara, dipadukan dengan tipografi modern dan layout grid produk yang bersih agar detail serat kayu terlihat menonjol.",
+    challenge: "Mengelola variasi spesifikasi produk mebel kustom dan memastikan katalog dapat dimuat dengan cepat meskipun memuat gambar visual produk beresolusi tinggi.",
+    solution: "Mengoptimalkan struktur query basis data MySQL serta mengimplementasikan lazy loading dan kompresi visual pada aset gambar produk mebel.",
+    result: "Platform e-commerce mebel Gembol Furniture fungsional dan estetis yang memudahkan pelanggan menjelajah produk sekaligus menyederhanakan manajemen stok admin, dengan repositori terbuka di GitHub."
   },
 
   // ── 3. SMART STUDENT LEARNING (Figma UI/UX) ──

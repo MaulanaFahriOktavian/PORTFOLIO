@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 
-export default function ProjectCard({ project, index = 0, onSelectProject }) {
+export default function ProjectCard({ project, _index = 0, onSelectProject }) {
   const handleClick = (e) => {
     e.preventDefault();
     if (onSelectProject) {
@@ -13,6 +13,8 @@ export default function ProjectCard({ project, index = 0, onSelectProject }) {
     e.stopPropagation();
     if (project.liveUrl) {
       window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+    } else if (project.githubUrl) {
+      window.open(project.githubUrl, "_blank", "noopener,noreferrer");
     } else if (onSelectProject) {
       onSelectProject(project.slug);
     }

@@ -105,7 +105,7 @@ export const profileData = {
       desc: "Merancang wireframe dan prototype di Figma, lalu mengembangkannya menjadi kode nyata dengan Laravel, Blade, Tailwind CSS, dan React."
     },
     {
-      title: "Pengalaman Proyek Nyata (DIDISPEN & BeWood)",
+      title: "Pengalaman Proyek Nyata (DIDISPEN & Gembol Furniture)",
       desc: "Berpengalaman merancang dokumentasi sistem (PRD, ERD, Flowchart) dan membangun sistem web berbasis database relasional MySQL."
     },
     {
